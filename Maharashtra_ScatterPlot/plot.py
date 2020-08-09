@@ -116,3 +116,33 @@ fig.update_layout(
     ))
 
 fig.show()
+
+# Bar plot
+fig_1 = go.Figure(px.bar(df1,x = 'City', y = 'Confirmed', color = 'City', 
+              animation_frame = 'Date', hover_data = ['City', 'Confirmed', 'Recovered', 'Deceased'],
+               barmode = 'relative', range_y = [1,120000], width =1000))
+
+fig_1.update_layout(
+    title={
+        'text': '<b>Covid19 plot for Cities of Maharashtra</b>',
+        'y':0.95,
+        'x':0.5,
+        'xanchor': 'center',
+        'yanchor': 'top'
+      },
+    
+   
+    xaxis_title="Cities",
+    xaxis_tickfont_size=8,
+    xaxis_tickangle=45,
+    yaxis=dict(
+        title='Cities',
+        titlefont_size=12,
+        tickfont_size=12,
+    ),
+    legend_title="Legend Title",
+    font=dict(
+        family="Courier New, monospace",
+        color="RebeccaPurple"
+    ))
+fig_1.show()
